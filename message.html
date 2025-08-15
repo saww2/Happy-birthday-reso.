@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday — Final Message</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body class="theme-soft">
+  <canvas id="confetti" class="confetti"></canvas>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="quotes.html" class="back btn ghost">← Back</a>
+    <h1 class="logo">To My Love</h1>
+    <div class="audio-controls">
+      <button id="playBtn" class="btn pill">Play Music</button>
+      <button id="pauseBtn" class="btn ghost">Pause</button>
+    </div>
+  </header>
+
+  <main class="center-stage">
+    <h2 class="title glow typewriter" data-text="You are my everything, today and always."></h2>
+    <p class="subtitle big">Happy Birthday, My Love ❤️</p>
+
+    <div class="lyrics" id="lyrics">
+      <span data-t="0">Happy birthday to you…</span>
+      <span data-t="4">Happy birthday to you…</span>
+      <span data-t="8">Happy birthday dear my love…</span>
+      <span data-t="12">Happy birthday to you 🎶</span>
+    </div>
+
+    <div class="nav-row">
+      <a href="index.html" class="btn primary">Start Over ↻</a>
+    </div>
+
+    <audio id="player" src="assets/song.mp3" preload="auto"></audio>
+  </main>
+
+  <footer class="footer">
+    <small>With all my love, forever.</small>
+  </footer>
+</body>
+</html>

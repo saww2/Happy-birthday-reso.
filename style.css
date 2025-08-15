@@ -1,0 +1,181 @@
+/* =============
+  Romantic Soft Theme
+============= */
+:root {
+  --pink: #ffc7d9;
+  --blush: #ffdce8;
+  --cream: #fff5ec;
+  --peach: #ffd7ba;
+  --rose: #ffafcc;
+  --text: #5a4a4a;
+  --accent: #ff8fab;
+  --shadow: rgba(0,0,0,.08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body.theme-soft {
+  font-family: "Quicksand", "Poppins", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--blush), var(--cream));
+  overflow-x: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 6px 24px var(--shadow);
+}
+
+.logo {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: .5px;
+}
+
+.audio-controls { display: flex; gap: 8px; }
+
+.center-stage, .quotes-stage {
+  min-height: calc(100dvh - 120px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px 16px 64px;
+}
+
+.title {
+  font-size: clamp(36px, 6vw, 72px);
+  margin: 0;
+  font-weight: 700;
+}
+
+.subtitle { margin: 8px 0 16px; font-size: 20px; opacity: .85; }
+.subtitle.big { font-size: clamp(24px, 4vw, 36px); }
+
+.section-title {
+  font-size: clamp(28px, 4.5vw, 42px);
+  margin: 16px 0 24px;
+}
+
+.glow {
+  text-shadow: 0 2px 14px rgba(255, 143, 171, .6);
+}
+
+.btn {
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px var(--shadow);
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary { background: var(--accent); color: white; }
+.btn.ghost { background: rgba(255,255,255,.65); }
+.btn.pill { background: white; }
+.btn.pulse { animation: pulse 1.6s infinite; }
+
+.cta-row, .nav-row {
+  display: flex; gap: 12px; justify-content: center; align-items: center;
+}
+
+.hint { opacity: .7; font-size: 13px; margin-top: 10px; }
+
+.footer {
+  text-align: center;
+  padding: 12px;
+  opacity: .7;
+}
+
+.back { text-decoration: none; color: inherit; }
+
+/* Floating hearts background */
+.floating-hearts::before,
+.floating-hearts::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255, 175, 204, .35) 0 6px, transparent 7px),
+    radial-gradient(circle at 80% 30%, rgba(255, 143, 171, .25) 0 8px, transparent 9px),
+    radial-gradient(circle at 40% 70%, rgba(255, 215, 186, .25) 0 10px, transparent 11px);
+  background-size: 120px 120px, 160px 160px, 200px 200px;
+  animation: float 12s linear infinite;
+}
+.floating-hearts::after { animation-duration: 18s; opacity: .6; }
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-60px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 8px 24px var(--shadow); }
+  50% { transform: scale(1.05); box-shadow: 0 12px 30px rgba(255, 143, 171, .35); }
+}
+
+/* Quotes carousel */
+.carousel {
+  max-width: 680px;
+  width: 100%;
+  padding: 24px;
+  background: rgba(255,255,255,.7);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.carousel blockquote {
+  margin: 0;
+  font-size: clamp(18px, 2.6vw, 24px);
+  line-height: 1.45;
+  display: none;
+}
+.carousel blockquote.active { display: block; animation: fade 700ms ease; }
+
+.nav-dots { margin-top: 14px; display: flex; gap: 8px; justify-content: center; }
+.nav-dots button {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 0; background: rgba(0,0,0,.15); cursor: pointer;
+}
+.nav-dots button.active { background: var(--accent); }
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Typewriter effect */
+.typewriter::after {
+  content: attr(data-text);
+  border-right: 3px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  animation: typing 5s steps(30, end) forwards, caret 0.8s steps(1) infinite;
+}
+@keyframes typing { to { width: 100%; } }
+@keyframes caret { 50% { border-color: transparent; } }
+
+/* Lyrics highlight */
+.lyrics {
+  margin-top: 16px;
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: 18px;
+}
+.lyrics span { opacity: .35; transition: opacity .3s ease; }
+.lyrics span.active { opacity: 1; text-shadow: 0 2px 10px rgba(255, 143, 171, .5); }
+
+/* Confetti canvas */
+.confetti {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+}

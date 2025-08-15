@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday — Quotes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body class="theme-soft">
+  <div class="floating-hearts" aria-hidden="true"></div>
+  <header class="topbar">
+    <a href="index.html" class="back btn ghost">← Back</a>
+    <h1 class="logo">With All My Heart</h1>
+    <div class="audio-controls">
+      <button id="playBtn" class="btn pill">Play Music</button>
+      <button id="pauseBtn" class="btn ghost">Pause</button>
+    </div>
+  </header>
+
+  <main class="quotes-stage">
+    <h2 class="section-title glow">Some Words From My Heart</h2>
+
+    <div class="quote-card carousel" id="quoteCarousel">
+      <blockquote>“You are my today and all of my tomorrows.”</blockquote>
+      <blockquote>“In your smile, I see something more beautiful than stars.”</blockquote>
+      <blockquote>“I choose you. And I’ll choose you over and over.”</blockquote>
+      <blockquote>“Every moment with you is my favorite.”</blockquote>
+      <blockquote>“You are my home and my adventure all at once.”</blockquote>
+      <blockquote>“I love you, not only for what you are, but for what I am with you.”</blockquote>
+      <blockquote>“My heart is, and always will be, yours.”</blockquote>
+    </div>
+
+    <div class="nav-dots" id="dots"></div>
+
+    <div class="nav-row">
+      <a href="message.html" class="btn primary">Next ✨</a>
+    </div>
+
+    <audio id="player" src="assets/song.mp3" preload="auto"></audio>
+  </main>
+
+  <footer class="footer">
+    <small>Forever yours.</small>
+  </footer>
+</body>
+</html>
